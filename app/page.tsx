@@ -1,6 +1,6 @@
 "use client"
 
-import { Mail, Linkedin, Twitter, Github, ExternalLink, MapPin, Trophy, Zap, Camera, ChefHat, Circle, Check, Hospital, Music, Dumbbell, Coffee, Moon, Sun, MountainSnow } from "lucide-react"
+import { Mail, Linkedin, Twitter, Github, ExternalLink, MapPin, Trophy, Camera, Check, Hospital, Music, Moon, Sun, MountainSnow } from "lucide-react"
 import { Analytics } from "@vercel/analytics/next"
 import Link from "next/link"
 import { useState, useEffect } from "react"
