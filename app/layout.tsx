@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Parth Gujare",
-  description: "Parth Gujare's personal website",
+  title: "Garrett Rhodes",
+  description: "Garrett Rhodes's personal website",
 };
 
 export default function RootLayout({

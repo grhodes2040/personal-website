@@ -1,6 +1,6 @@
 "use client"
 
-import { Mail, Linkedin, Twitter, Github, ExternalLink, MapPin, Zap, ChefHat, Circle, Music, Dumbbell, Coffee, Moon, Sun } from "lucide-react"
+import { Mail, Linkedin, Twitter, Github, ExternalLink, MapPin, Trophy, Zap, Camera, ChefHat, Circle, Check, Hospital, Music, Dumbbell, Coffee, Moon, Sun, MountainSnow } from "lucide-react"
 import { Analytics } from "@vercel/analytics/next"
 import Link from "next/link"
 import { useState, useEffect } from "react"
@@ -53,12 +53,12 @@ export default function Component() {
         <div className="mb-20">
           <h1 className={`text-4xl font-semibold mb-4 tracking-tight leading-tight transition-colors duration-300 ${
             isDark ? 'text-white' : 'text-black'
-          }`}>Hi, I&apos;m Parth Gujare 👋</h1>
+          }`}>Hi, I&apos;m Garrett Rhodes 👋</h1>
           <div className="space-y-4">
             <p className={`text-lg leading-relaxed transition-colors duration-300 ${
               isDark ? 'text-gray-300' : 'text-gray-600'
             }`}>
-              I have fun when I&apos;m learning new things and working on hard problems. Want to build and invest in things with interesting people and ideas.
+              It has always been a dream of mine to create my own website. It&apos;s a work in progress, but I&apos;m excited to share it with you! I will continue to update it as I learn more. It is truly amazing what you can do with AI these days.
             </p>
             <div className="flex flex-wrap gap-3">
               <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-200 group cursor-default hover:shadow-sm ${
@@ -70,85 +70,85 @@ export default function Component() {
                 <span className={`text-sm font-medium transition-colors duration-200 tracking-wide ${
                   isDark ? 'text-gray-300 group-hover:text-white' : 'text-gray-700 group-hover:text-black'
                 }`}>
-                  Based in New York, NY
-                </span>
-              </div>
-              
-              <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-200 group cursor-default hover:shadow-sm ${
-                isDark ? 'bg-orange-900/30 hover:bg-orange-900/40' : 'bg-orange-50 hover:bg-orange-100'
-              }`}>
-                <Zap className={`h-4 w-4 transition-all duration-200 group-hover:scale-110 ${
-                  isDark ? 'text-orange-400 group-hover:text-orange-300' : 'text-orange-500 group-hover:text-orange-600'
-                }`} />
-                <span className={`text-sm font-medium transition-colors duration-200 tracking-wide ${
-                  isDark ? 'text-orange-300 group-hover:text-orange-200' : 'text-orange-700 group-hover:text-orange-800'
-                }`}>
-                  Texas Football
+                  Based in Denver, CO
                 </span>
               </div>
               
               <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-200 group cursor-default hover:shadow-sm ${
                 isDark ? 'bg-red-900/30 hover:bg-red-900/40' : 'bg-red-50 hover:bg-red-100'
               }`}>
-                <ChefHat className={`h-4 w-4 transition-all duration-200 group-hover:scale-110 ${
-                  isDark ? 'text-red-400 group-hover:text-red-300' : 'text-red-500 group-hover:text-red-600'
+                <Trophy className={`h-4 w-4 transition-all duration-200 group-hover:scale-110 ${
+                  isDark ? 'text-red-400 group-hover:text-red-300' : 'text-red-600 group-hover:text-red-700'
                 }`} />
                 <span className={`text-sm font-medium transition-colors duration-200 tracking-wide ${
                   isDark ? 'text-red-300 group-hover:text-red-200' : 'text-red-700 group-hover:text-red-800'
                 }`}>
-                  BBQ Enthusiast
+                  Badgers Sports
                 </span>
               </div>
               
               <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-200 group cursor-default hover:shadow-sm ${
-                isDark ? 'bg-blue-900/30 hover:bg-blue-900/40' : 'bg-blue-50 hover:bg-blue-100'
+                isDark ? 'bg-sky-900/30 hover:bg-sky-900/40' : 'bg-sky-50 hover:bg-sky-100'
               }`}>
-                <Circle className={`h-4 w-4 transition-all duration-200 group-hover:scale-110 ${
-                  isDark ? 'text-blue-400 group-hover:text-blue-300' : 'text-blue-500 group-hover:text-blue-600'
+                <MountainSnow className={`h-4 w-4 transition-all duration-200 group-hover:scale-110 ${
+                  isDark ? 'text-sky-400 group-hover:text-sky-300' : 'text-sky-500 group-hover:text-sky-600'
                 }`} />
                 <span className={`text-sm font-medium transition-colors duration-200 tracking-wide ${
-                  isDark ? 'text-blue-300 group-hover:text-blue-200' : 'text-blue-700 group-hover:text-blue-800'
+                  isDark ? 'text-sky-300 group-hover:text-sky-200' : 'text-sky-700 group-hover:text-sky-800'
                 }`}>
-                  Carolina Basketball
-                </span>
-              </div>
-              
-              <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-200 group cursor-default hover:shadow-sm ${
-                isDark ? 'bg-purple-900/30 hover:bg-purple-900/40' : 'bg-purple-50 hover:bg-purple-100'
-              }`}>
-                <Music className={`h-4 w-4 transition-all duration-200 group-hover:scale-110 ${
-                  isDark ? 'text-purple-400 group-hover:text-purple-300' : 'text-purple-500 group-hover:text-purple-600'
-                }`} />
-                <span className={`text-sm font-medium transition-colors duration-200 tracking-wide ${
-                  isDark ? 'text-purple-300 group-hover:text-purple-200' : 'text-purple-700 group-hover:text-purple-800'
-                }`}>
-                  Bollywood Music
+                  Downhill Skier
                 </span>
               </div>
               
               <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-200 group cursor-default hover:shadow-sm ${
                 isDark ? 'bg-green-900/30 hover:bg-green-900/40' : 'bg-green-50 hover:bg-green-100'
               }`}>
-                <Dumbbell className={`h-4 w-4 transition-all duration-200 group-hover:scale-110 ${
+                <Check className={`h-4 w-4 transition-all duration-200 group-hover:scale-110 ${
                   isDark ? 'text-green-400 group-hover:text-green-300' : 'text-green-500 group-hover:text-green-600'
                 }`} />
                 <span className={`text-sm font-medium transition-colors duration-200 tracking-wide ${
                   isDark ? 'text-green-300 group-hover:text-green-200' : 'text-green-700 group-hover:text-green-800'
                 }`}>
-                  Barry&apos;s
+                  Hockey Player
                 </span>
               </div>
               
               <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-200 group cursor-default hover:shadow-sm ${
-                isDark ? 'bg-amber-900/30 hover:bg-amber-900/40' : 'bg-amber-50 hover:bg-amber-100'
+                isDark ? 'bg-stone-700/30 hover:bg-stone-700/40' : 'bg-stone-50 hover:bg-stone-100'
               }`}>
-                <Coffee className={`h-4 w-4 transition-all duration-200 group-hover:scale-110 ${
-                  isDark ? 'text-amber-400 group-hover:text-amber-300' : 'text-amber-600 group-hover:text-amber-700'
+                <Camera className={`h-4 w-4 transition-all duration-200 group-hover:scale-110 ${
+                  isDark ? 'text-stone-400 group-hover:text-stone-300' : 'text-stone-500 group-hover:text-stone-600'
                 }`} />
                 <span className={`text-sm font-medium transition-colors duration-200 tracking-wide ${
-                  isDark ? 'text-amber-300 group-hover:text-amber-200' : 'text-amber-800 group-hover:text-amber-900'
+                  isDark ? 'text-stone-300 group-hover:text-stone-200' : 'text-stone-700 group-hover:text-stone-800'
                 }`}>
-                  Coffee
+                  Photograhy
+                </span>
+              </div>
+              
+              <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-200 group cursor-default hover:shadow-sm ${
+                isDark ? 'bg-lime-900/30 hover:bg-lime-900/40' : 'bg-lime-50 hover:bg-lime-100'
+              }`}>
+                <Music className={`h-4 w-4 transition-all duration-200 group-hover:scale-110 ${
+                  isDark ? 'text-lime-400 group-hover:text-lime-300' : 'text-lime-500 group-hover:text-lime-600'
+                }`} />
+                <span className={`text-sm font-medium transition-colors duration-200 tracking-wide ${
+                  isDark ? 'text-lime-300 group-hover:text-lime-200' : 'text-lime-700 group-hover:text-lime-800'
+                }`}>
+                  EDM Enjoyer
+                </span>
+              </div>
+              
+              <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-200 group cursor-default hover:shadow-sm ${
+                isDark ? 'bg-rose-900/30 hover:bg-rose-900/40' : 'bg-rose-50 hover:bg-rose-100'
+              }`}>
+                <Hospital className={`h-4 w-4 transition-all duration-200 group-hover:scale-110 ${
+                  isDark ? 'text-rose-400 group-hover:text-rose-300' : 'text-rose-600 group-hover:text-rose-700'
+                }`} />
+                <span className={`text-sm font-medium transition-colors duration-200 tracking-wide ${
+                  isDark ? 'text-rose-300 group-hover:text-rose-200' : 'text-rose-800 group-hover:text-rose-900'
+                }`}>
+                  HealthTech Nerd
                 </span>
               </div>
             </div>
@@ -164,119 +164,112 @@ export default function Component() {
             <div className={`group rounded-lg p-4 -m-4 transition-all duration-300 ease-in-out cursor-default ${
               isDark ? 'hover:bg-gray-800 hover:shadow-sm' : 'hover:bg-gray-50 hover:shadow-sm'
             }`}>
-              <div className="flex justify-between items-baseline mb-2">
-                <h3 className={`text-lg font-medium transition-colors duration-200 ${
-                  isDark ? 'text-white group-hover:text-gray-100' : 'text-black group-hover:text-gray-900'
-                }`}>Product Manager, Growth</h3>
-                <span className={`text-sm font-medium tracking-wide transition-colors duration-300 ${
-                  isDark ? 'text-gray-400' : 'text-gray-500'
-                }`}>2024 - Present</span>
-              </div>
-              <div className="mb-2">
+              <div className="mb-4">
                 <Link 
-                  href="https://ramp.com" 
+                  href="https://redoxengine.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className={`transition-all duration-200 px-1 -mx-1 rounded ${
+                  className={`transition-all duration-200 px-1 -mx-1 rounded text-lg font-medium ${
                     isDark 
                       ? 'text-gray-300 group-hover:text-gray-200 hover:bg-yellow-900' 
                       : 'text-gray-600 group-hover:text-gray-700 hover:bg-yellow-200'
                   }`}
                 >
-                  Ramp
+                  Redox
                 </Link>
               </div>
-              <p className={`leading-relaxed transition-colors duration-200 text-sm ${
-                isDark ? 'text-gray-300 group-hover:text-gray-200' : 'text-gray-700 group-hover:text-gray-800'
-              }`}>
-                Building tools to help Ramp acquire more customers
-              </p>
-            </div>
-
-            <div className={`group rounded-lg p-4 -m-4 transition-all duration-300 ease-in-out cursor-default ${
-              isDark ? 'hover:bg-gray-800 hover:shadow-sm' : 'hover:bg-gray-50 hover:shadow-sm'
-            }`}>
-              <div className="flex justify-between items-baseline mb-2">
-                <h3 className={`text-lg font-medium transition-colors duration-200 ${
-                  isDark ? 'text-white group-hover:text-gray-100' : 'text-black group-hover:text-gray-900'
-                }`}>Associate Consultant</h3>
-                <span className={`text-sm font-medium tracking-wide transition-colors duration-300 ${
-                  isDark ? 'text-gray-400' : 'text-gray-500'
-                }`}>2022 - 2024</span>
+              <div className="space-y-4">
+                <div>
+                  <div className="flex justify-between items-baseline mb-2">
+                    <h3 className={`text-lg font-medium transition-colors duration-200 ${
+                      isDark ? 'text-white group-hover:text-gray-100' : 'text-black group-hover:text-gray-900'
+                    }`}>SVP, Growth</h3>
+                    <span className={`text-sm font-medium tracking-wide transition-colors duration-300 ${
+                      isDark ? 'text-gray-400' : 'text-gray-500'
+                    }`}>2025 - 2026</span>
+                  </div>
+                  <p className={`leading-relaxed transition-colors duration-200 text-sm ${
+                    isDark ? 'text-gray-300 group-hover:text-gray-200' : 'text-gray-700 group-hover:text-gray-800'
+                  }`}>
+                    Led the sales team to drive growth for Redox&apos;s healthcare integration platform across all verticals, along with all of the other activities that never fully drop off your plate.
+                  </p>
+                </div>
+                <div>
+                  <div className="flex justify-between items-baseline mb-2">
+                    <h3 className={`text-lg font-medium transition-colors duration-200 ${
+                      isDark ? 'text-white group-hover:text-gray-100' : 'text-black group-hover:text-gray-900'
+                    }`}>Director of Sales, Vendors</h3>
+                    <span className={`text-sm font-medium tracking-wide transition-colors duration-300 ${
+                      isDark ? 'text-gray-400' : 'text-gray-500'
+                    }`}>2024 - 2025</span>
+                  </div>
+                  <p className={`leading-relaxed transition-colors duration-200 text-sm ${
+                    isDark ? 'text-gray-300 group-hover:text-gray-200' : 'text-gray-700 group-hover:text-gray-800'
+                  }`}>
+                    Asked to come back into the sales team to lead Redox&apos;s Vendor team, selling across all core digital health verticals.
+                  </p>
+                </div>
+                <div>
+                  <div className="flex justify-between items-baseline mb-2">
+                    <h3 className={`text-lg font-medium transition-colors duration-200 ${
+                      isDark ? 'text-white group-hover:text-gray-100' : 'text-black group-hover:text-gray-900'
+                    }`}>Product Manager / Product Strategist</h3>
+                    <span className={`text-sm font-medium tracking-wide transition-colors duration-300 ${
+                      isDark ? 'text-gray-400' : 'text-gray-500'
+                    }`}>2021 - 2023</span>
+                  </div>
+                  <p className={`leading-relaxed transition-colors duration-200 text-sm ${
+                    isDark ? 'text-gray-300 group-hover:text-gray-200' : 'text-gray-700 group-hover:text-gray-800'
+                  }`}>
+                    A healthy mix of new product development in emerging markets, speaking on stages, and working closely with our CEO and board on corporate strategy and development.
+                  </p>
+                </div>
+                <div>
+                  <div className="flex justify-between items-baseline mb-2">
+                    <h3 className={`text-lg font-medium transition-colors duration-200 ${
+                      isDark ? 'text-white group-hover:text-gray-100' : 'text-black group-hover:text-gray-900'
+                    }`}>Startup Sales</h3>
+                    <span className={`text-sm font-medium tracking-wide transition-colors duration-300 ${
+                      isDark ? 'text-gray-400' : 'text-gray-500'
+                    }`}>2017 - 2021</span>
+                  </div>
+                  <p className={`leading-relaxed transition-colors duration-200 text-sm ${
+                    isDark ? 'text-gray-300 group-hover:text-gray-200' : 'text-gray-700 group-hover:text-gray-800'
+                  }`}>
+                    20th employee. First external SDR. Account Executive. Team lead. All things startup sales and business development. Talked to nearly every company in healthcare over these 4 years.
+                  </p>
+                </div>
               </div>
-              <div className="mb-2">
-                <Link 
-                  href="https://bain.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className={`transition-all duration-200 px-1 -mx-1 rounded ${
-                    isDark 
-                      ? 'text-gray-300 group-hover:text-gray-200 hover:bg-red-900' 
-                      : 'text-gray-600 group-hover:text-gray-700 hover:bg-red-100'
-                  }`}
-                >
-                  Bain & Company
-                </Link>
-              </div>
-              <p className={`leading-relaxed transition-colors duration-200 text-sm ${
-                isDark ? 'text-gray-300 group-hover:text-gray-200' : 'text-gray-700 group-hover:text-gray-800'
-              }`}>
-                Learned how to be a generalist. Spent a lot of time in the Private Equity Group, analyzing potential investments across different industries.
-              </p>
-            </div>
-
-            <div className={`group rounded-lg p-4 -m-4 transition-all duration-300 ease-in-out cursor-default ${
-              isDark ? 'hover:bg-gray-800 hover:shadow-sm' : 'hover:bg-gray-50 hover:shadow-sm'
-            }`}>
-              <div className="flex justify-between items-baseline mb-2">
-                <h3 className={`text-lg font-medium transition-colors duration-200 ${
-                  isDark ? 'text-white group-hover:text-gray-100' : 'text-black group-hover:text-gray-900'
-                }`}>Investment Banking</h3>
-                <span className={`text-sm font-medium tracking-wide transition-colors duration-300 ${
-                  isDark ? 'text-gray-400' : 'text-gray-500'
-                }`}>2021</span>
-              </div>
-              <div className="mb-2">
-                <Link 
-                  href="https://jefferies.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className={`transition-all duration-200 px-1 -mx-1 rounded ${
-                    isDark 
-                      ? 'text-gray-300 group-hover:text-gray-200 hover:bg-gray-700' 
-                      : 'text-gray-600 group-hover:text-gray-700 hover:bg-gray-200'
-                  }`}
-                >
-                  Jefferies
-                </Link>
-              </div>
-              <p className={`leading-relaxed transition-colors duration-200 text-sm ${
-                isDark ? 'text-gray-300 group-hover:text-gray-200' : 'text-gray-700 group-hover:text-gray-800'
-              }`}>
-                Did a lot of financial modeling and valuation. Can use excel without a mouse.
-              </p>
             </div>
           </div>
         </div>
 
-        {/* Learning & Building */}
+        {/* Exploring, Learning, & Building */}
         <div className="mb-20">
           <h2 className={`text-2xl font-semibold mb-8 transition-colors duration-300 ${
             isDark ? 'text-white' : 'text-black'
-          }`}>Learning & Building</h2>
+          }`}>Exploring, Learning, & Building</h2>
           <div className="space-y-8">
             <div>
-              <p className={`leading-relaxed mb-6 transition-colors duration-300 ${
+              <p className={`leading-relaxed mb-4 transition-colors duration-300 ${
                 isDark ? 'text-gray-300' : 'text-gray-700'
               }`}>
-                Moving from spreadsheets and presentations to actually building things. Figuring out how to turn AI models into useful products that solve real problems.
+                I recently left my job to dive headfirst into a myriad of different interests. Things I am exploring currently:
               </p>
+              <ul className={`list-disc list-inside space-y-2 transition-colors duration-300 ${
+                isDark ? 'text-gray-300' : 'text-gray-700'
+              }`}>
+                <li>AI tools and coding - building small projects to learn more about software development.</li>
+                <li>Small business M&A - exploring small business ownership and helping an aluminum company with M&A.</li>
+                <li>Financial markets and investing - learning more about investing, modeling, trading, and macro economic factors, with a focus on the AI buildout.</li>
+                <li>Health and fitness - focusing on physical and mental well-being through exercise and diet.</li>
+              </ul>
             </div>
             
             <div className="space-y-6">
               <div>
                 <Link
-                  href="https://github.com/pgujare"
+                  href="https://github.com/grhodes2040"
                   className={`flex items-center gap-2 transition-all duration-200 hover:translate-x-1 font-medium text-base mb-6 ${
                     isDark ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-black'
                   }`}
@@ -302,15 +295,7 @@ export default function Component() {
                 <p className={`leading-relaxed transition-colors duration-200 text-sm ${
                 isDark ? 'text-gray-300 group-hover:text-gray-200' : 'text-gray-700 group-hover:text-gray-800'
               }`}>
-                  My first coding project - built with Next.js, TypeScript, and Tailwind CSS. Learning by building.
-                </p>
-              </div>
-              
-              <div className="pt-4">
-                <p className={`text-sm italic transition-colors duration-300 ${
-                  isDark ? 'text-gray-400' : 'text-gray-600'
-                }`}>
-                  More projects coming soon as I continue learning and building...
+                  My first coding project - built with Next.js, TypeScript, and Tailwind CSS. Learning by building + heavy inspiration from https://github.com/pgujare. 
                 </p>
               </div>
             </div>
@@ -325,21 +310,21 @@ export default function Component() {
           <div>
             <div className="flex justify-between items-baseline mb-1">
               <Link 
-                href="https://unc.edu" 
+                href="https://www.wisc.edu" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className={`text-lg font-medium px-1 -mx-1 rounded transition-all duration-200 ${
                   isDark ? 'text-white hover:bg-blue-900' : 'text-black hover:bg-blue-200'
                 }`}
               >
-                University of North Carolina at Chapel Hill
+                University of Wisconsin-Madison
               </Link>
             </div>
             <p className={`leading-relaxed text-sm mt-2 transition-colors duration-300 ${
               isDark ? 'text-gray-300' : 'text-gray-700'
             }`}>
-              B.S. in Business Administration<br />
-              B.A. in Computer Science
+              B.B.A. in Actuarial Science<br />
+              B.B.A. in Finance, Investment and Banking
             </p>
           </div>
         </div>
@@ -351,7 +336,7 @@ export default function Component() {
           }`}>Contact</h2>
           <div className="flex gap-6">
             <Link
-              href="https://x.com/parthgujare_"
+              href="https://x.com/garrettroads"
               className={`flex items-center gap-2 transition-all duration-200 hover:translate-y-[-2px] font-medium text-base ${
                 isDark ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-black'
               }`}
@@ -360,7 +345,7 @@ export default function Component() {
               X
             </Link>
             <Link
-              href="https://linkedin.com/in/parthgujare"
+              href="https://linkedin.com/in/garrettrhodes1"
               className={`flex items-center gap-2 transition-all duration-200 hover:translate-y-[-2px] font-medium text-base ${
                 isDark ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-black'
               }`}
@@ -369,7 +354,7 @@ export default function Component() {
               LinkedIn
             </Link>
             <Link
-              href="mailto:parthgujare10@gmail.com"
+              href="mailto:g.rhodes72@hotmail.com"
               className={`flex items-center gap-2 transition-all duration-200 hover:translate-y-[-2px] font-medium text-base ${
                 isDark ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-black'
               }`}
