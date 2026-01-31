@@ -58,7 +58,7 @@ export default function Component() {
             <p className={`text-lg leading-relaxed transition-colors duration-300 ${
               isDark ? 'text-gray-300' : 'text-gray-600'
             }`}>
-              It has always been a dream of mine to create my own website. It&apos;s a work in progress, but I&apos;m excited to share it with you! I will continue to update it as I learn more. It is truly amazing what you can do with AI these days.
+              Welcome to my website! It&apos;s a work in progress, but I&apos;m excited to build a space to share my experience, writing, photography, and much more. 
             </p>
             <div className="flex flex-wrap gap-3">
               <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-200 group cursor-default hover:shadow-sm ${
