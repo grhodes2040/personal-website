@@ -1,7 +1,6 @@
 "use client"
 
 import { Mail, Linkedin, Twitter, Github, ExternalLink, MapPin, Trophy, Camera, Check, Hospital, Music, Moon, Sun, MountainSnow } from "lucide-react"
-import { Analytics } from "@vercel/analytics/next"
 import Link from "next/link"
 import { useState, useEffect } from "react"
 
@@ -24,7 +23,6 @@ export default function Component() {
       backgroundImage: `radial-gradient(circle, ${isDark ? '#374151' : '#e5e7eb'} 1px, transparent 1px)`,
       backgroundSize: '20px 20px'
     }}>
-      <Analytics />
       <div className="max-w-2xl mx-auto px-6 py-16">
         {/* Dark Mode Toggle */}
         <div className="fixed top-6 right-6 z-10">
