@@ -14,16 +14,19 @@ export default function PhotographyPage() {
       try {
         const response = await fetch("/api/photography");
         const data = await response.json();
-        let imgs: string[] = data.images || [];
+        const imgs: string[] = data.images || [];
         // move KeblerPass_MountainPano to front if present
         const idx = imgs.findIndex(f =>
           f.toLowerCase().includes("keblerpass_mountainpano")
         );
         if (idx > 0) {
-          const [moved] = imgs.splice(idx, 1);
-          imgs.unshift(moved);
+          const reordered = [...imgs];
+          const [moved] = reordered.splice(idx, 1);
+          reordered.unshift(moved);
+          setImages(reordered);
+        } else {
+          setImages(imgs);
         }
-        setImages(imgs);
       } catch (error) {
         console.error("Failed to load images:", error);
         setImages([]);
@@ -55,7 +58,7 @@ export default function PhotographyPage() {
     };
     window.addEventListener("keydown", handleKeyPress);
     return () => window.removeEventListener("keydown", handleKeyPress);
-  }, [selectedIndex, images.length]);
+  }, [selectedIndex, images.length, handleNext, handlePrev]);
 
   if (isLoading) {
     return (
