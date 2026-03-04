@@ -5,7 +5,7 @@ import { Analytics } from "@vercel/analytics/next"
 import Link from "next/link"
 import { useState, useEffect } from "react"
 
-type Page = 'about' | 'reading' | 'photography'
+type Page = 'about' | 'reading'
 
 export default function Component() {
   const [isDark, setIsDark] = useState(false)
@@ -83,20 +83,16 @@ export default function Component() {
           >
             Reading
           </button>
-          <button
-            onClick={() => setCurrentPage('photography')}
+          <Link
+            href="/photography"
             className={`px-4 py-2 rounded-full font-medium transition-all duration-300 ${
-              currentPage === 'photography'
-                ? isDark
-                  ? 'bg-white text-black'
-                  : 'bg-black text-white'
-                : isDark
+              isDark
                 ? 'bg-gray-800 text-gray-300 hover:bg-gray-700'
                 : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
             }`}
           >
             Photography
-          </button>
+          </Link>
         </div>
 
         {/* About Me Page */}
@@ -391,20 +387,6 @@ export default function Component() {
               isDark ? 'text-white' : 'text-black'
             }`}>Reading</h1>
             <p className={`text-lg leading-relaxed transition-colors duration-300 ${
-              isDark ? 'text-gray-300' : 'text-gray-600'
-            }`}>
-              Coming soon...
-            </p>
-          </div>
-        )}
-
-        {/* Photography Page */}
-        {currentPage === 'photography' && (
-          <div className="mb-20">
-            <h1 className={`text-4xl font-semibold mb-4 tracking-tight leading-tight transition-colors duration-300 ${
-              isDark ? 'text-white' : 'text-black'
-            }`}>Photography</h1>
-            <p className={`text-lg leading-relaxed transition-colors duration-300 mb-8 ${
               isDark ? 'text-gray-300' : 'text-gray-600'
             }`}>
               Coming soon...

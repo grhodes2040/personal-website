@@ -1,70 +1,200 @@
-import fs from "fs/promises";
-import path from "path";
+"use client";
+
 import Image from "next/image";
-import Link from "next/link";
+import { useState, useEffect } from "react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
-export const dynamic = "force-static"; // updates when you deploy
+export default function PhotographyPage() {
+  const [images, setImages] = useState<string[]>([]);
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
-export const metadata = {
-  title: "Photography",
-};
+  useEffect(() => {
+    async function loadImages() {
+      try {
+        const response = await fetch("/api/photography");
+        const data = await response.json();
+        let imgs: string[] = data.images || [];
+        // move KeblerPass_MountainPano to front if present
+        const idx = imgs.findIndex(f =>
+          f.toLowerCase().includes("keblerpass_mountainpano")
+        );
+        if (idx > 0) {
+          const [moved] = imgs.splice(idx, 1);
+          imgs.unshift(moved);
+        }
+        setImages(imgs);
+      } catch (error) {
+        console.error("Failed to load images:", error);
+        setImages([]);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+    loadImages();
+  }, []);
 
-export default async function PhotographyPage() {
-  const dir = path.join(process.cwd(), "public", "photography");
+  const handleNext = () => {
+    if (selectedIndex !== null) {
+      setSelectedIndex((selectedIndex + 1) % images.length);
+    }
+  };
 
-  let files: string[] = [];
-  try {
-    files = await fs.readdir(dir);
-  } catch {
-    files = [];
+  const handlePrev = () => {
+    if (selectedIndex !== null) {
+      setSelectedIndex((selectedIndex - 1 + images.length) % images.length);
+    }
+  };
+
+  useEffect(() => {
+    const handleKeyPress = (e: KeyboardEvent) => {
+      if (selectedIndex === null) return;
+      if (e.key === "ArrowRight") handleNext();
+      if (e.key === "ArrowLeft") handlePrev();
+      if (e.key === "Escape") setSelectedIndex(null);
+    };
+    window.addEventListener("keydown", handleKeyPress);
+    return () => window.removeEventListener("keydown", handleKeyPress);
+  }, [selectedIndex, images.length]);
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-white" style={{
+        backgroundImage: `radial-gradient(circle, #e5e7eb 1px, transparent 1px)`,
+        backgroundSize: '20px 20px'
+      }}>
+        <div className="max-w-6xl mx-auto px-6 py-16">
+          <h1 className="text-4xl font-semibold tracking-tight leading-tight text-black">Photography</h1>
+          <p className="text-sm opacity-70 mt-4">Loading...</p>
+        </div>
+      </div>
+    );
   }
 
-  const images = files
-    .filter((f) => /\.(png|jpe?g|webp|gif)$/i.test(f))
-    .sort()
-    .reverse(); // newest first (based on filename)
+  if (images.length === 0) {
+    return (
+      <div className="min-h-screen bg-white" style={{
+        backgroundImage: `radial-gradient(circle, #e5e7eb 1px, transparent 1px)`,
+        backgroundSize: '20px 20px'
+      }}>
+        <div className="max-w-6xl mx-auto px-6 py-16">
+          <h1 className="text-4xl font-semibold tracking-tight leading-tight text-black mb-4">Photography</h1>
+          <p className="text-sm opacity-70 text-black">0 photos</p>
+          <div className="mt-8 border p-6">
+            <p className="text-sm opacity-80">
+              No images yet. Add files to{" "}
+              <code className="font-mono">public/photography</code> and redeploy.
+            </p>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
-    <main className="mx-auto max-w-5xl px-4 py-10">
-      <div className="flex items-baseline justify-between">
-        <h1 className="text-2xl font-semibold">Photography</h1>
-        <p className="text-sm opacity-70">{images.length} photos</p>
-      </div>
-
-      {images.length === 0 ? (
-        <div className="mt-8 rounded-2xl border p-6">
-          <p className="text-sm opacity-80">
-            No images yet. Add files to{" "}
-            <code className="font-mono">public/photography</code> and redeploy.
-          </p>
+    <>
+    <div className="min-h-screen bg-white" style={{
+      backgroundImage: `radial-gradient(circle, #e5e7eb 1px, transparent 1px)`,
+      backgroundSize: '20px 20px'
+    }}>
+      <div className="max-w-6xl mx-auto px-6 py-16">
+        <div className="flex items-baseline justify-between mb-12">
+          <h1 className="text-4xl font-semibold tracking-tight leading-tight text-black">Photography</h1>
+          <p className="text-sm opacity-70 text-black">{images.length} photos</p>
         </div>
-      ) : (
-        <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
-          {images.map((file) => {
+
+        <div className="mt-6 grid gap-4 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 auto-rows-max">
+          {images.map((file, index) => {
             const src = `/photography/${file}`;
+            const isWide = file.toLowerCase().includes("keblerpass_mountainpano");
             return (
-              <Link
+              <div
                 key={file}
-                href={src}
-                target="_blank"
-                className="group relative aspect-square overflow-hidden rounded-xl"
-                aria-label={`Open ${file} fullsize`}
+                className="cursor-pointer overflow-hidden"
+                style={{
+                  ...(isWide && { gridColumn: '1 / -1' }),
+                  height: isWide ? 'auto' : '250px'
+                }}
+                onClick={() => setSelectedIndex(index)}
               >
                 <Image
                   src={src}
                   alt={file}
-                  fill
-                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                  className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                  width={1200}
+                  height={800}
+                  style={{ 
+                    width: "100%", 
+                    height: "100%",
+                    objectFit: 'contain'
+                  }}
+                  className="transition-transform duration-300 hover:scale-[1.02]"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
-                <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/55 to-transparent p-2 opacity-0 transition-opacity group-hover:opacity-100">
-                  <div className="text-xs text-white">View fullsize</div>
-                </div>
-              </Link>
+              </div>
             );
           })}
         </div>
+      </div>
+    </div>
+
+      {selectedIndex !== null && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-30 z-50 flex items-center justify-center"
+          onClick={() => setSelectedIndex(null)}
+        >
+          <button
+            className="absolute top-6 right-6 p-2 hover:bg-gray-800 transition-colors"
+            onClick={(e) => {
+              e.stopPropagation();
+              setSelectedIndex(null);
+            }}
+            aria-label="Close"
+          >
+            <X className="w-6 h-6 text-white" />
+          </button>
+
+          <button
+            className="absolute left-6 p-2 hover:bg-gray-800 transition-colors hidden sm:block"
+            onClick={(e) => {
+              e.stopPropagation();
+              handlePrev();
+            }}
+            aria-label="Previous image"
+          >
+            <ChevronLeft className="w-8 h-8 text-white" />
+          </button>
+
+          <div
+            className="max-w-4xl max-h-[90vh] relative flex items-center justify-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Image
+              src={`/photography/${images[selectedIndex!]}`}
+              alt={images[selectedIndex!]}
+              width={1600}
+              height={1200}
+              className="max-w-full max-h-[90vh] w-auto h-auto"
+              sizes="100vw"
+              priority
+            />
+          </div>
+
+          <button
+            className="absolute right-6 p-2 hover:bg-gray-800 transition-colors hidden sm:block"
+            onClick={(e) => {
+              e.stopPropagation();
+              handleNext();
+            }}
+            aria-label="Next image"
+          >
+            <ChevronRight className="w-8 h-8 text-white" />
+          </button>
+
+          <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-white text-sm">
+            {selectedIndex! + 1} / {images.length}
+          </div>
+        </div>
       )}
-    </main>
+    </>
   );
 }
